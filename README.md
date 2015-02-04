@@ -1,4 +1,5 @@
 # project-cookie
+<<<<<<< HEAD
 
 ### TEAM NAME: Project Cookie
 
@@ -19,3 +20,5 @@ No ideas yet
 ### Additional Notes:
 
 Y:ou can include anything else that's relevant to the project below this.
+=======
+>>>>>>> 49c418de0e5356a99a6021b4da2475da66f919f1
