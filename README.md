@@ -1,6 +1,6 @@
-# project-cookie
+# project-cookie :cookie:
 
-### TEAM NAME: :cookie: Project Cookie :cookie:
+### TEAM NAME: Project Cookie
 
 ### TEAM MEMBERS:
 
