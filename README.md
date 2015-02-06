@@ -12,7 +12,7 @@
 
 ### PROJECT DESCRIPTION:
 
-We haven't really come up for an idea yet, but we are interested in adding a feature to Lev's open-source generator :zap: for creating MEAN-stack applications! Nina is also interested in game dev :black_joker:, so that might be an fun idea too
+We haven't really come up for an idea yet, but we are interested in adding a feature to Lev's open-source generator :zap: for creating MEAN-stack applications! Nina is also interested in game dev :black_joker: so that might be an fun idea too
 
 ### Additional Notes:
 
