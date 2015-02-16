@@ -10,7 +10,7 @@
 |  bh2447  | bingyanzen       | Bingyan Hu     | BC          | 2016 |
 |  ch2994  | ch2994           | Cheng Huang    | SEAS        | 2016 |
 |  yob2000 | ozzieba          | Oz Ben-Ami     | SEAS        | 2015 |
-|  jzf2101 | jzf2101          | Jessica Forde  |             |      |
+|  jzf2101 | jzf2101          | Jessica Forde  | CE            |   2015   | 
 
 ### PROJECT DESCRIPTION:
 
