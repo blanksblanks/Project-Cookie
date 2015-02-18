@@ -1,0 +1,23 @@
+{
+  "name": "http-angular",
+  "version": "0.0.1",
+  "description": "Angular Http Server app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Angular",
+    "Express"
+  ],
+  "author": "Lev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "cors": "^2.5.3",
+    "express": "^4.11.2",
+    "fs-extra": "^0.16.3",
+    "mongoose": "^3.8.23"
+  }
+}
