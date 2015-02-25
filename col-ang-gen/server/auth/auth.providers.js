@@ -109,7 +109,7 @@
     });
   }
   function github(req, res) {
-    var accessTokenUrl = 'https://github.com/login/oauth/access_token'
+    var accessTokenUrl = 'https://github.com/login/oauth/access_token';
     var peopleApiUrl = 'https://api.github.com/user';
 
     var params = {
@@ -176,10 +176,10 @@
                 if(profile.name===undefined) {
                   profile.name=profile.login+' github';
                 }
-                user.firstName = profile.name.split(" ")[0];
-                user.lastName = profile.name.split(" ")[1];
+                user.firstName = profile.name.split(' ')[0];
+                user.lastName = profile.name.split(' ')[1];
                 if(user.lastName===undefined) {
-                  user.lastName="none";
+                  user.lastName='none';
                 }
                 if(profile.email===undefined) {
                   profile.email=profile.login+'@github.com';

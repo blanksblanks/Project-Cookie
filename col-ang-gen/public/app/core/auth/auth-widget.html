@@ -33,9 +33,9 @@
       </ul>
 
       <ul ng-if="isAuthenticated()" class="dropdown-menu">
-        <li><a ui-sref="dashboard.user">Dashboard</a></li>
+        <li><a ui-sref="dashboard">Dashboard</a></li>
         <li>
-          <a ui-sref="users.edit.profile({id: currentUser()._id})">
+          <a ui-sref="profile({id: currentUser()._id})">
             User Profile
           </a>
         </li>

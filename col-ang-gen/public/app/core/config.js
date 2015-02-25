@@ -40,6 +40,10 @@
         templateUrl: '/partials/core/user/profile.html',
         controller: 'ProfileCtrl',
         protected: true
+      })
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: '/partials/dashboard/dashboard.html'
       });
 
     $authProvider.facebook({
