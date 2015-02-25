@@ -20,3 +20,14 @@ We haven't really come up for an idea yet, but we are interested in adding a fea
 
 - Not sure why we're called Project Cookie, it was Cheng's idea and maybe has to do with the fact that we were eating lace cookies that Bingyan brought before class? :dog:
 - Open to additional ideas and teammates~ :hatched_chick: :balloon:
+
+###Installation
+
+```shell 
+cd col-ang-gen/
+npm install
+bower install
+grunt build
+node server.js ```
+
+
