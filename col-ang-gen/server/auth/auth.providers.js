@@ -14,8 +14,8 @@
       request       = require('request');
 
   exports.google = google;
+  exports.github = github;
   exports.unlinkProvider = unlinkProvider;
-
   function google(req, res) {
     var accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
     var peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
@@ -108,6 +108,107 @@
       });
     });
   }
+  function github(req, res) {
+    var accessTokenUrl = 'https://github.com/login/oauth/access_token'
+    var peopleApiUrl = 'https://api.github.com/user';
+
+    var params = {
+      client_id: req.body.clientId,
+      redirect_uri: req.body.redirectUri,
+      client_secret: authKeys.GITHUB_SECRET,
+      code: req.body.code
+    };
+
+    // Step 1. Exchange authorization code for access token.
+    request.post(accessTokenUrl, { json: true, form: params }, function(err, response, token) {
+
+      var accessToken = token.access_token;
+      var headers = { Authorization: 'token ' + accessToken, 'User-Agent': 'Project-Cookie' };
+
+      // Step 2. Retrieve profile information about the current user.
+      request.get({ url: peopleApiUrl, headers: headers, json: true }, function(err, response, profile) {
+        console.log('logging profile');
+        console.log(profile);
+        // Step 3a. If user is already signed in then link accounts.
+        if (req.headers.authorization) {
+          User.findOne({ 'github.id': profile.id }, function(err, existingUser) {
+            if (existingUser) {
+              return res.status(409).send({ message: 'There is already a GitHub account that belongs to you' });
+            }
+
+            var token = req.headers.authorization.split(' ')[1];
+            var payload = jwt.decode(token, TOKEN_SECRET);
+
+            User.findById(payload.sub, function(err, user) {
+              if (!user) {
+                return res.status(400).send({ message: 'User not found' });
+              }
+              user.github = profile;
+              console.log('setting user github profile');
+              console.log(user.github);
+              user.displayName = user.displayName || profile.name;
+              user.save(function(err) {
+                res.send({ token: authService.createToken(req, user) });
+              });
+            });
+          });
+        } else {
+          // Step 3b. Create a new user account or return an existing one.
+          User.findOne({ 'github.id': profile.id }, function(err, existingUser) {
+            if (existingUser) {
+              return res.send({ token: authService.createToken(req, existingUser) });
+            }
+            User.findOne({email: profile.email}, function(err, userWithEmail) {
+              if (userWithEmail) {
+                userWithEmail.github = profile;
+                userWithEmail.provider = 'github';
+                userWithEmail.save(function(err) {
+                  if (err) {
+                    console.log('error trying to add GitHub account to existing user');
+                    console.log(err);
+                  }
+                  return res.send({ token: authService.createToken(req, userWithEmail) });
+                });
+              } else {
+
+                var user = new User();
+                user.github = profile;
+                if(profile.name===undefined) {
+                  profile.name=profile.login+' github';
+                }
+                user.firstName = profile.name.split(" ")[0];
+                user.lastName = profile.name.split(" ")[1];
+                if(user.lastName===undefined) {
+                  user.lastName="none";
+                }
+                if(profile.email===undefined) {
+                  profile.email=profile.login+'@github.com';
+                }
+                user.email = profile.email;
+                user.provider = 'github';
+                if (profile.picture) {
+                  user.profileImageUrl = profile.picture;
+                }
+                console.log('creating user in else statement');
+                console.log(user.github);
+                user.displayName = profile.name;
+                user.save(function (err) {
+                  if (err) {
+                    console.log('error trying to save github account');
+                    console.log(err);
+                  }
+                  res.send({ token: authService.createToken(req, user) });
+                });
+
+              }
+            });
+
+          });
+        }
+      });
+    });
+  }
+
 
   function unlinkProvider(req, res) {
     var provider = req.params.provider;

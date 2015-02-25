@@ -5,7 +5,7 @@
 
   var clientIds = {
     facebook: '689050897814697',
-    google: '245712720284-fc37j539heu5ktagshoj42qrr3qdfcog.apps.googleusercontent.com',
+    google: '817403130477-8j0o7mqeuhnuv3bimsh2gsklfein37oc.apps.googleusercontent.com',
     github: '08f868285c66f5226367',
     linkedin: '7543vklf9n4pxx',
     foursquare: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K'
@@ -47,7 +47,8 @@
     });
 
     $authProvider.google({
-      clientId: clientIds.google
+      clientId: clientIds.google,
+      url: '/auth/google',
     });
 
     $authProvider.github({
