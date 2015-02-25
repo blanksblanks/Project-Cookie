@@ -28,6 +28,6 @@ cd col-ang-gen/
 npm install
 bower install
 grunt build
-node server.js```
+node server.js ```
 
 
