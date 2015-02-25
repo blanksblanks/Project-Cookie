@@ -6,7 +6,7 @@
   var clientIds = {
     facebook: '689050897814697',
     google: '245712720284-fc37j539heu5ktagshoj42qrr3qdfcog.apps.googleusercontent.com',
-    github: '0ba2600b1dbdb756688b',
+    github: '08f868285c66f5226367',
     linkedin: '7543vklf9n4pxx',
     foursquare: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K'
   };
@@ -51,8 +51,22 @@
     });
 
     $authProvider.github({
-      clientId: clientIds.github
+      clientId: clientIds.github,
+      url: '/auth/github',
+      redirectUri: window.location.origin
     });
+
+/*$authProvider.github({
+  name: 'github',
+  url: '/auth/github',
+//  authorizationEndpoint: 'https://github.com/login/oauth/authorize',
+  redirectUri: window.location.origin,
+  clientId: clientIds.github,
+  scope: [],
+  scopeDelimiter: ' ',
+  type: '2.0',
+  popupOptions: { width: 1020, height: 618 }
+});*/
 
     $authProvider.linkedin({
       clientId: clientIds.linkedin
