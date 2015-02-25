@@ -56,18 +56,6 @@
       redirectUri: window.location.origin
     });
 
-/*$authProvider.github({
-  name: 'github',
-  url: '/auth/github',
-//  authorizationEndpoint: 'https://github.com/login/oauth/authorize',
-  redirectUri: window.location.origin,
-  clientId: clientIds.github,
-  scope: [],
-  scopeDelimiter: ' ',
-  type: '2.0',
-  popupOptions: { width: 1020, height: 618 }
-});*/
-
     $authProvider.linkedin({
       clientId: clientIds.linkedin
     });
