@@ -4,6 +4,7 @@
   var mongoose =      require('mongoose'),
       User =          mongoose.model('User'),
       clientViews =   require('./routes/clientViews'),
+      github = require('../github/gitController.js'),
       errors =        require('../utilities/errors');  // for view partial routing
 
 
@@ -17,7 +18,7 @@
       }
     });
 
-    app.route('/api/hello')
+    app.route('/hello')
       .get(function(req, res) {
         res.send('hello there!');
       })
@@ -25,10 +26,10 @@
         console.log('processing a post request');
         res.send('processing post to hello');
       });
-
+  //  app.route('/repos').get(github.repos);
     app.use('/api/users', require('../api/user'));
     app.use('/auth', require('../auth'));
-
+    app.use('/repos',require('../github/index'));
 
 
     app.route('/partials/*')
