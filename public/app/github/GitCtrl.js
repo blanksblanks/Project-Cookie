@@ -3,7 +3,7 @@
 
   var appCore = angular.module('app.core');
   appCore.controller('GitCtrl', function($scope, $log, $auth, GithubService, ngDialog, logger) {
-  $scope.gitRepos = GithubService.repos;
+  $scope.gitRepos = GithubService.getRepos;
 /*    $scope.isAdmin = IdentityService.isAdmin;
     $scope.isAuthenticated = IdentityService.isAuthenticated;
     $scope.getCurrentUser = IdentityService.getCurrentUser;
