@@ -14,7 +14,6 @@
   core.config(function ($locationProvider, $stateProvider,
                         $urlRouterProvider, $authProvider) {
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('app', {
         url: '/',
@@ -44,8 +43,13 @@
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: '/partials/dashboard/dashboard.html'
+      })
+      .state('gitinfo', {
+        url: '/gitinfo',
+        templateUrl: '/partials/github/git.html',
+        controller: 'GitCtrl'
       });
-
+    $urlRouterProvider.otherwise('/');
     $authProvider.facebook({
       clientId: clientIds.facebook
     });
@@ -76,6 +80,8 @@
       redirectUri: window.location.origin,
       authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate'
     });
+
+
   });
 
   core.run(function Run($auth, $log, IdentityService) {
