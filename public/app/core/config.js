@@ -8,7 +8,8 @@
     google: '817403130477-8j0o7mqeuhnuv3bimsh2gsklfein37oc.apps.googleusercontent.com',
     github: '08f868285c66f5226367',
     linkedin: '7543vklf9n4pxx',
-    foursquare: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K'
+    foursquare: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K',
+    gitlocal: 'e86060576123616596e3'
   };
 
   core.config(function ($locationProvider, $stateProvider,
@@ -58,12 +59,20 @@
       clientId: clientIds.google,
       url: '/auth/google',
     });
-
-    $authProvider.github({
-      clientId: clientIds.github,
-      url: '/auth/github',
-      redirectUri: window.location.origin
-    });
+    var theUri =  window.location.origin;
+    if (theUri.indexOf('localhost')>=0) { 
+      $authProvider.github({
+        redirectUri: theUri,
+        clientId: clientIds.gitlocal,
+        url: '/auth/github'
+        });
+    } else {
+      $authProvider.github({
+        redirectUri: theUri,
+        clientId: clientIds.github,
+        url: '/auth/github',
+      });
+    }
 
     $authProvider.linkedin({
       clientId: clientIds.linkedin
