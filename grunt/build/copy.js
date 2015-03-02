@@ -34,7 +34,7 @@
         src: 'distgitignore',
         dest: '<%= directories.dist %>/.gitignore'
       }, {
-        src: '.env',
+        src: '.envdist',
         dest: '<%= directories.dist %>/.env'
       }]
     },
