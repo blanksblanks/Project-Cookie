@@ -1,0 +1,10 @@
+APP_SECRET=
+TOKEN_SECRET=
+MANDRILL_API_KEY=mandrillAPIKey
+AWS_API_KEY=awsAPIKey
+AWS_SECRET=awsSecret
+S3_BUCKET_NAME=s3BucketName
+S3_REGION=s3Region
+GOOGLE_SECRET=
+GITHUB_SECRET=
+DB_STRING=mongodb://projectCookie:<password>@ds049651.mongolab.com:49651/project-cookie
