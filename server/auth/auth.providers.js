@@ -129,6 +129,7 @@
       request.get({ url: peopleApiUrl, headers: headers, json: true }, function(err, response, profile) {
         console.log('logging profile');
         console.log(profile);
+        if(!profile) {return res.status(401).send('bad credentials');}
         // Step 3a. If user is already signed in then link accounts.
         if (req.headers.authorization) {
           User.findOne({ 'github.id': profile.id }, function(err, existingUser) {
@@ -144,6 +145,7 @@
                 return res.status(400).send({ message: 'User not found' });
               }
               user.github = profile;
+              user.github.token = accessToken;
               console.log('setting user github profile');
               console.log(user.github);
               user.displayName = user.displayName || profile.name;
@@ -161,6 +163,7 @@
             User.findOne({email: profile.email}, function(err, userWithEmail) {
               if (userWithEmail) {
                 userWithEmail.github = profile;
+                userWithEmail.github.token = accessToken;
                 userWithEmail.provider = 'github';
                 userWithEmail.save(function(err) {
                   if (err) {
@@ -173,6 +176,7 @@
 
                 var user = new User();
                 user.github = profile;
+                user.github.token = accessToken;
                 if(profile.name===undefined) {
                   profile.name=profile.login+' github';
                 }
