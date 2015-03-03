@@ -57,7 +57,7 @@
 
     $authProvider.google({
       clientId: clientIds.google,
-      url: '/auth/google',
+      url: '/auth/google'
     });
     var theUri =  window.location.origin;
     if (theUri.indexOf('localhost')>=0) { 
@@ -70,7 +70,7 @@
       $authProvider.github({
         redirectUri: theUri,
         clientId: clientIds.github,
-        url: '/auth/github',
+        url: '/auth/github'
       });
     }
 
