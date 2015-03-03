@@ -18,7 +18,7 @@
       var token = req.headers.authorization.split(' ')[1],
           payload = jwt.decode(token, TOKEN_SECRET);
       User.findById(payload.sub, function(err, user) {
-        if (err) { return res.render('500'); }
+        if (err||(user===undefined)) { return res.render('500'); }
         var userToSend = {
           _id: user._id,
           displayName: user.displayName,

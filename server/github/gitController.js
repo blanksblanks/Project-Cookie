@@ -22,7 +22,7 @@
     var token = req.headers.authorization.split(' ')[1],
         payload = jwt.decode(token, TOKEN_SECRET);
     User.findById(payload.sub, function(err, user) {
-      if (err) { return res.render('500'); }
+      if (err||(user===undefined)) { return res.render('500'); }
       console.log(user.toString());
         var accessToken = user.github.token;
         var headers = { Authorization: 'token ' + accessToken, 'User-Agent': 'Project-Cookie' };
