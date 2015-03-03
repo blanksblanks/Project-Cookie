@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  var appCore = angular.module('app.core');
-  appCore.controller('GitCtrl', function($scope, $log, $auth, GithubService, ngDialog, logger) {
+  var app = angular.module('app');
+  app.controller('GitCtrl', function($scope, $log, $auth, GithubService, ngDialog, logger) {
   $scope.gitRepos = GithubService.getRepos;
 /*    $scope.isAdmin = IdentityService.isAdmin;
     $scope.isAuthenticated = IdentityService.isAuthenticated;
