@@ -27,6 +27,18 @@
       });
     };
 
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider)
+        .then(function() {
+          ngDialog.closeAll();
+          IdentityService.getCurrentUser();
+          console.log('you have successfully logged in ');
+          })
+          .catch(function(response) {
+            console.log(response.data);
+        });
+    };
+
     $scope.logout = function() {
       $auth.logout()
         .then(function() {
