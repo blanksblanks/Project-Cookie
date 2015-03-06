@@ -2,7 +2,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('app');
+  var app = angular.module('app.github');
 
   app.factory('GithubService', function(User, $http, $q, $log, $auth) {
     var repos = {},
