@@ -13,31 +13,54 @@
       authService   = require('../auth/auth.service'),
       TOKEN_SECRET  = process.env.TOKEN_SECRET,
       request       = require('request');
-  exports.repos=repos;
+  exports.handle_request=handle_request;
 //  var gitController = {
   function repos(req,res) {
-    console.log('repos');
-    //    var accessTokenUrl = 'https://github.com/login/oauth/access_token';
-    var repoUrl = 'https://api.github.com/user/repos';
+    //var reps =
+    handle_request('repos',
+req,res,'https://api.github.com/user/repos');
+    //res.send({repos:reps});
+  }
+//  function getCommitData(req,res)
+  function handle_request(req,res) {
+  //  var repoUrl = 'https://api.github.com/user/repos';
+    //TODO: when authentication is fixed, fix these lines
+    console.info({'oURL':req.originalUrl,'path':req.path});
+    var label = 'data',
+        url = 'https://api.github.com'+req.path;
     var token = req.headers.authorization.split(' ')[1],
         payload = jwt.decode(token, TOKEN_SECRET);
     User.findById(payload.sub, function(err, user) {
       if (err||(user===undefined)) { return res.render('500'); }
       console.log(user.toString());
-        var accessToken = user.github.token;
-        var headers = { Authorization: 'token ' + accessToken, 'User-Agent': 'Project-Cookie' };
-        request.get({ url: repoUrl, headers: headers, json: true }, function(err, response, reps) {
-          if(response.statusCode>=400) {
-            console.log({'code': response.statusCode});
-            return res.status(401).send('bad git credentials');
-          }
-          console.log('logging repos');
-          console.log(reps);
-          return res.send({repos: reps});
-        });
-      //TODO: when authentication is fixed, fix these lines
-      //return res.status(500).send({message: 'Everything not ok on github repo url call'});
-      });
+      api_request(user.github.token,url,function(data) {
+        var obj = {};
+        obj[label]=data;
+        res.send(obj);
+      }  );
+//      var accessToken = user.github.token;
+//      var headers = { Authorization: 'token ' + accessToken, 'User-Agent': 'Project-Cookie' };
+      return 'err';//otherwise get complaints about function not returning value...
+    });
+  }
+  function api_request(token,url,callback) {
+    console.log('repos');
+    //    var accessTokenUrl = 'https://github.com/login/oauth/access_token';
+   //var accessToken = user.github.token;
+   var headers = { Authorization: 'token ' + token, 'User-Agent': 'Project-Cookie' };
+   request.get({ url: url, headers: headers, json: true }, function(err, response, reps) {
+      if(response.statusCode>=400) {
+        console.log({'code': response.statusCode});
+        return 'bad creds';//res.status(401).send('bad git credentials');
+      }
+//      console.log('logging repos');
+//      console.log(reps);
+      callback(reps);
+      return 'err';
+    //  return res.send({repos: reps});
+    });
+    //return res.status(500).send({message: 'Everything not ok on github repo url call'});
+      
   }
 
 

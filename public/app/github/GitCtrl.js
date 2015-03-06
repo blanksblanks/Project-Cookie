@@ -5,40 +5,23 @@
   app.controller('GitCtrl', GitCtrl);
   GitCtrl.$inject = ['$scope','$log','GithubService'];
   function GitCtrl($scope, $log, GithubService) {
-  var deferred = GithubService.getRepos();
-  deferred.then(function(val) {
-    $scope.gitRepos=val;
-  });
-/*    $scope.isAdmin = IdentityService.isAdmin;
-    $scope.isAuthenticated = IdentityService.isAuthenticated;
-    $scope.getCurrentUser = IdentityService.getCurrentUser;
-    $scope.currentUser = IdentityService.currentUser;
-
-    $scope.displaySignup = function() {
-      ngDialog.open({
-        template: '/partials/core/auth/signup.html',
-        className: 'ngdialog-theme-lv',
-        controller: 'SignupCtrl',
-        scope: $scope
+    var deferred = GithubService.getRepos();
+    deferred.then(function(val) {
+      $scope.gitRepos=val;
+      $scope.contribs={};
+      val.map(function(repo) {
+        $scope.contribs[repo.full_name]={};
+        var def = GithubService.getCommits(repo.owner.login,repo.name);
+        def.then(function(r) {
+          if (r!==undefined) {
+            r.map(function(u) {
+              $scope.contribs[repo.full_name][u.author.login]=u.total;
+              $scope.commits=$scope.contribs;
+            });
+          };
+        }); 
       });
-    };
-
-    $scope.displayLogin = function() {
-      ngDialog.open({
-        template: '/partials/core/auth/login.html',
-        className: 'ngdialog-theme-lv',
-        controller: 'LoginCtrl',
-        scope: $scope
-      });
-    };
-
-    $scope.logout = function() {
-      $auth.logout()
-        .then(function() {
-          IdentityService.logoutCurrentUser();
-          logger.info('You have successfully logged out', {}, 'Logout');
-        });
-    };*/
+    });
   };
 
 }());
