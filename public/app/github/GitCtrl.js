@@ -1,9 +1,14 @@
 (function() {
   'use strict';
 
-  var appCore = angular.module('app.core');
-  appCore.controller('GitCtrl', function($scope, $log, $auth, GithubService, ngDialog, logger) {
-  $scope.gitRepos = GithubService.getRepos;
+  var app = angular.module('app.github');
+  app.controller('GitCtrl', GitCtrl);
+  GitCtrl.$inject = ['$scope','$log','GithubService'];
+  function GitCtrl($scope, $log, GithubService) {
+  var deferred = GithubService.getRepos();
+  deferred.then(function(val) {
+    $scope.gitRepos=val;
+  });
 /*    $scope.isAdmin = IdentityService.isAdmin;
     $scope.isAuthenticated = IdentityService.isAuthenticated;
     $scope.getCurrentUser = IdentityService.getCurrentUser;
@@ -34,5 +39,6 @@
           logger.info('You have successfully logged out', {}, 'Logout');
         });
     };*/
-  });
+  };
+
 }());
