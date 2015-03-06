@@ -13,16 +13,21 @@
       authService   = require('../auth/auth.service'),
       TOKEN_SECRET  = process.env.TOKEN_SECRET,
       request       = require('request');
-  exports.repos=repos;
+  exports.handle_request=handle_request;
 //  var gitController = {
   function repos(req,res) {
     //var reps =
-    handle_request('repos',req,res,'https://api.github.com/user/repos');
+    handle_request('repos',
+req,res,'https://api.github.com/user/repos');
     //res.send({repos:reps});
   }
-  function handle_request(label,req,res,url) {
+//  function getCommitData(req,res)
+  function handle_request(req,res) {
   //  var repoUrl = 'https://api.github.com/user/repos';
     //TODO: when authentication is fixed, fix these lines
+    console.info({'oURL':req.originalUrl,'path':req.path});
+    var label = 'data',
+        url = 'https://api.github.com'+req.path;
     var token = req.headers.authorization.split(' ')[1],
         payload = jwt.decode(token, TOKEN_SECRET);
     User.findById(payload.sub, function(err, user) {
@@ -46,7 +51,7 @@
    request.get({ url: url, headers: headers, json: true }, function(err, response, reps) {
       if(response.statusCode>=400) {
         console.log({'code': response.statusCode});
-        return res.status(401).send('bad git credentials');
+        return 'bad creds';//res.status(401).send('bad git credentials');
       }
 //      console.log('logging repos');
 //      console.log(reps);

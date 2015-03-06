@@ -1,3 +1,4 @@
+
 (function() {
   'use strict';
 
@@ -9,7 +10,7 @@
 
   console.log('hi');
 
-  router.get('/',authService.ensureAuthenticated, gitController.repos);
+  router.use(authService.ensureAuthenticated, gitController.handle_request);
   module.exports = router;
   //  .post('/signup', authService.signup)
   //  .post('/google', providers.google)
