@@ -32,7 +32,7 @@ req,res,'https://api.github.com/user/repos');
         payload = jwt.decode(token, TOKEN_SECRET);
     User.findById(payload.sub, function(err, user) {
       if (err||(user===undefined)) { return res.render('500'); }
-      console.log(user.toString());
+      console.log('USER INFORMATION from server/github/gitcontroller.js:', user.toString());
       api_request(user.github.token,url,function(data) {
         var obj = {};
         obj[label]=data;

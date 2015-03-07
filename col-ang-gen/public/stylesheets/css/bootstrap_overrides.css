@@ -1,0 +1,5 @@
+/* line 1, ../sass/bootstrap_overrides.scss */
+.navbar {
+  margin-bottom: 0;
+  border: 1px solid transparent;
+}

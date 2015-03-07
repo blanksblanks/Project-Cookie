@@ -1,0 +1,118 @@
+/* TOOLBAR */
+/* line 2, ../sass/material_overrides.scss */
+md-toolbar.md-default-theme {
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  color: #03a9f4;
+}
+/* line 7, ../sass/material_overrides.scss */
+md-toolbar.md-default-theme .md-primary.md-white {
+  background-color: #fff;
+  color: black;
+}
+
+/* line 12, ../sass/material_overrides.scss */
+md-content.md-default-theme {
+  background-color: none;
+}
+
+/**
+ * override md-content with min-height of 400 and set to intiial containing
+ * viewport (viewport height of 100%)
+ */
+/* line 17, ../sass/material_overrides.scss */
+.full-height-content {
+  height: 100vh;
+}
+
+/* MAKE BUTTON WHITE AND REDUCE SHADOW */
+/* line 19, ../sass/material_overrides.scss */
+md-button.md-default-theme.md-raised.md-primary:not([disabled]):hover,
+md-button.md-default-theme.md-raised.md-primary:not([disabled]).focus,
+md-button.md-default-theme.md-fab.md-primary:not([disabled]):hover,
+md-button.md-default-theme.md-fab.md-primary:not([disabled]).focus {
+  background-color: #fff;
+}
+
+/* line 26, ../sass/material_overrides.scss */
+.md-shadow-bottom-z-2, md-button.md-raised.focus:not([disabled]),
+md-button.md-raised:not([disabled]):hover,
+md-button.md-fab.focus:not([disabled]),
+md-button.md-fab:not([disabled]):hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* BUTTONS */
+/* line 34, ../sass/material_overrides.scss */
+.md-fab.md-primary {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+}
+/* line 39, ../sass/material_overrides.scss */
+.md-fab.md-primary:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+}
+/* line 45, ../sass/material_overrides.scss */
+.md-fab.md-primary button.-inner {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+}
+
+/* line 53, ../sass/material_overrides.scss */
+md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+}
+
+/* line 60, ../sass/material_overrides.scss */
+.md-shadow-bottom-z-2,
+h1.md-toolbar-tools .md-raised.focus:not([disabled]),
+h1.md-toolbar-tools .md-raised:not([disabled]):hover,
+h1.md-toolbar-tools .md-fab.focus:not([disabled]),
+h1.md-toolbar-tools .md-fab:not([disabled]):hover {
+  box-shadow: 0 4px 8px 0 transparent;
+}
+
+/* line 72, ../sass/material_overrides.scss */
+md-content.md-default-theme {
+  min-height: 400px;
+}
+
+/* line 78, ../sass/material_overrides.scss */
+md-tabs.md-default-theme section.md-header {
+  background: #fff;
+}
+/* line 81, ../sass/material_overrides.scss */
+md-tabs.md-default-theme section.md-header .md-header-items-container .md-header-items md-tabs-ink-bar {
+  color: black;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 4px;
+  margin-top: -4px;
+  transform-origin: 0 0;
+}
+/* line 92, ../sass/material_overrides.scss */
+md-tabs.md-default-theme section.md-header .md-header-items-container .md-header-items md-tabs-ink-bar.md-ink-bar-delayed {
+  transition: transform 0.35s cubic-bezier(0.45, 0, 0.15, 1);
+}
+/* line 96, ../sass/material_overrides.scss */
+md-tabs.md-default-theme section.md-header .md-header-items-container .md-header-items md-tab {
+  border: none;
+}
+/* line 97, ../sass/material_overrides.scss */
+md-tabs.md-default-theme section.md-header .md-header-items-container .md-header-items md-tab md-tab-label {
+  color: black;
+}

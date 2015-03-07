@@ -190,9 +190,14 @@
                 }
                 user.email = profile.email;
                 user.provider = 'github';
-                if (profile.picture) {
-                  user.profileImageUrl = profile.picture;
+                // if (profile.picture) {
+                //   user.profileImageUrl = profile.picture;
+                // }
+                if (profile.avatar_url) {
+                  user.profileImageUrl = profile.avatar_url;
+                  console.log('PROFILE PIC!!!!', user.profileImageUrl)
                 }
+
                 console.log('creating user in else statement');
                 console.log(user.github);
                 user.displayName = profile.name;
