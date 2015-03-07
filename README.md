@@ -23,6 +23,8 @@ We haven't really come up for an idea yet, but we are interested in adding a fea
 
 ###Installation
 
+Make sure you have the necessary .env and .envdist files!
+
 ```shell 
 cd col-ang-gen/
 npm install
