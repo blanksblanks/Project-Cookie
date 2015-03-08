@@ -1,0 +1,32 @@
+{
+  "name": "satellizer",
+  "version": "0.6.0",
+  "main": "satellizer.js",
+  "homepage": "https://github.com/sahat/satellizer",
+  "ignore": [
+    ".gitignore",
+    ".travis.yml",
+    "node_modules",
+    "bower_components",
+    "test",
+    "LICENSE",
+    "package.json",
+    "gulpfile.js",
+    "karma.conf.js",
+    "examples",
+    "coverage"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.22",
+    "angular-mocks": "~1.2.22"
+  },
+  "_release": "0.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.6.0",
+    "commit": "0d8f194a1ce4187ce739f21c7872143b21b5cc22"
+  },
+  "_source": "git://github.com/sahat/satellizer.git",
+  "_target": "0.6.0",
+  "_originalSource": "satellizer"
+}

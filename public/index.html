@@ -16,6 +16,7 @@
     body {
       padding-top: 50px;
       padding-bottom: 20px;
+      margin: 20em 20em 20em;
     }
   </style>
   <!-- build:css style.css -->
@@ -64,6 +65,9 @@
   <script src="/bower_components/es5-shim/es5-shim.js"></script>
   <script src="/bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
+  <!-- ds.js -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="nv.d3.min.js"></script>
   <!-- build:js app/app.min.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -96,6 +100,7 @@
   <script src="app/core/app.core.module.js"></script>
   <script src="app/core/logger/core.logger.module.js"></script>
   <script src="app/dashboard/dashboard.module.js"></script>
+  <script src="app/github/github.module.js"></script>
   <script src="app/app.config.js"></script>
   <script src="app/core/auth/AuthCtrl.js"></script>
   <script src="app/core/auth/IdentityService.js"></script>
@@ -121,6 +126,7 @@
   <script src="app/dashboard/config.route.js"></script>
   <script src="app/github/GitCtrl.js"></script>
   <script src="app/github/GithubService.js"></script>
+  <script src="app/github/config.route.js"></script>
   <script src="app/github/gitInfo.js"></script>
   <!-- endinjector -->
   <!-- endbuild -->

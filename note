@@ -1,0 +1,13 @@
+server/routes.js
+    app.use('/github',require('../github/index')); // this line 
+github/
+    server/github/index.js + gitController.js
+
+public/app/github/ is where it's at
+    GithubService: define functions for API calls
+    GitCtrl: invoke functions from GithubService and display on git.html
+
+to run:
+grunt build
+node server.js
+

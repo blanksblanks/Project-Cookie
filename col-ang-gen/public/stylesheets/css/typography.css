@@ -1,0 +1,36 @@
+/* line 1, ../sass/typography.scss */
+.center {
+  text-align: center;
+}
+
+/* line 3, ../sass/typography.scss */
+h2.top-title {
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 1.2em;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+/* line 11, ../sass/typography.scss */
+.tooltip-inner {
+  font-size: 16px;
+}
+
+/* line 15, ../sass/typography.scss */
+small.icon-text {
+  position: relative;
+  bottom: 3px;
+  padding-left: 5px;
+}
+
+/* line 22, ../sass/typography.scss */
+.icon-fa-sm {
+  font-size: 7px;
+}
+
+/* line 25, ../sass/typography.scss */
+.icon-fa-raised {
+  position: relative;
+  top: -8px;
+}

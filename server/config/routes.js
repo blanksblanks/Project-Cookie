@@ -29,7 +29,7 @@
   //  app.route('/repos').get(github.repos);
     app.use('/api/users', require('../api/user'));
     app.use('/auth', require('../auth'));
-    app.use('/repos',require('../github/index'));
+    app.use('/github',require('../github/index'));
 
 
     app.route('/partials/*')

@@ -1,10 +1,14 @@
 <div>
   <ul ng-if="!isAuthenticated()" class="nav navbar-nav navbar-right auth-widget">
-    <li><a href class="login" ng-click="displayLogin()">Login</a></li>
+    <li>
+
+    <a href class="login" ng-click="authenticate('github')"><i class="ion-social-github"></i>Sign in with GitHub</a></li>
     <!--
+    <a href class="login" ng-click="displayLogin()">Login</a></li>
     <li><a href>or</a></li>
     <li><a href class="signup" ng-click="displaySignup()">Signup</a></li>
     -->
+    </form>
 
   </ul>
 
@@ -15,7 +19,7 @@
       <div class="media" class="dropdown-toggle" dropdown-toggle>
         <a class="pull-right" href="#" >
           <img class="media-object"
-               src="{{ currentUser().google.picture }}"
+               src="{{ currentUser().github.picture }}"
                alt="{{ currentUser().profile.displayName }}"
                width="30"
                height="30">

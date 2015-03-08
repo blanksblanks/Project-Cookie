@@ -2,11 +2,11 @@
 (function() {
   'use strict';
 
-  var app = angular.module('app');
+  var app = angular.module('app.github');
 
   app.factory('GithubService', function(User, $http, $q, $log, $auth) {
     var repos = {},
-        reposEndpoint = '/repos';
+        reposEndpoint = '/github/user/repos';
 
     return {
       repos: function() {
@@ -17,13 +17,21 @@
       logoutCurrentUser: logoutCurrentUser,
       isAuthenticated: isAuthenticated,
       isAdmin: isAdmin*/
-      getRepos: getRepos
+      getRepos: getRepos,
+      getData: getData,
+      getCommits: getCommits
     };
     function getRepos() {
+      return getData(reposEndpoint);
+    }
+    function getCommits(owner,repo) {
+      return getData('/github/repos/'+owner+'/'+repo+'/stats/contributors');
+    }
+    function getData(endpoint) {
       var deferred = $q.defer();
-      $http.get(reposEndpoint)
+      $http.get(endpoint)
       .success(function(data) {
-        repos = JSON.stringify(data.repos);//new User();
+        repos = data.data;//new User();
 //        angular.extend(repos, data);
 //        $log.info('current user is now set');
         $log.info(repos);

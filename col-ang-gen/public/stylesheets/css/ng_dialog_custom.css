@@ -1,0 +1,118 @@
+/* line 1, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv {
+  padding-bottom: 160px;
+  padding-top: 160px;
+}
+/* line 4, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-content {
+  background: #fff;
+  color: #444;
+  font-family: 'Helvetica Neue',sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  width: 60%;
+  padding-bottom: 50px;
+}
+/* line 12, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-content h1, .ngdialog.ngdialog-theme-lv .ngdialog-content h2, .ngdialog.ngdialog-theme-lv .ngdialog-content h3, .ngdialog.ngdialog-theme-lv .ngdialog-content h4, .ngdialog.ngdialog-theme-lv .ngdialog-content h5, .ngdialog.ngdialog-theme-lv .ngdialog-content h6, .ngdialog.ngdialog-theme-lv .ngdialog-content p, .ngdialog.ngdialog-theme-lv .ngdialog-content ul, .ngdialog.ngdialog-theme-lv .ngdialog-content li {
+  color: inherit;
+}
+/* line 16, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 20, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-close:before {
+  background: transparent;
+  color: #bbb;
+  content: "\00D7";
+  font-size: 26px;
+  font-weight: 400;
+  height: 30px;
+  line-height: 26px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  text-align: center;
+  width: 30px;
+}
+/* line 28, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-close:hover:before, .ngdialog.ngdialog-theme-lv .ngdialog-close:active:before {
+  color: #777;
+}
+/* line 29, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-message {
+  margin-bottom: .5em;
+}
+/* line 30, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-input {
+  margin-bottom: 1em;
+}
+/* line 32, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-input textarea, .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="text"], .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="password"],
+.ngdialog.ngdialog-theme-lv .ngdialog-input input[type="email"], .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="url"] {
+  background: #f0f0f0;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 .25em;
+  min-height: 2.5em;
+  padding: .25em .67em;
+  width: 100%;
+}
+/* line 39, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-input textarea:focus, .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="text"]:focus, .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="password"]:focus,
+.ngdialog.ngdialog-theme-lv .ngdialog-input input[type="email"]:focus, .ngdialog.ngdialog-theme-lv .ngdialog-input input[type="url"]:focus {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+/* line 45, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-buttons:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+/* line 46, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-button {
+  border: 0;
+  cursor: pointer;
+  float: right;
+  font-family: inherit;
+  font-size: .8em;
+  letter-spacing: .1em;
+  line-height: 1em;
+  margin: 0 0 0 .5em;
+  padding: .75em 2em;
+  text-transform: uppercase;
+}
+/* line 52, ../sass/ng_dialog_custom.scss */
+.ngdialog.ngdialog-theme-lv .ngdialog-button:focus {
+  animation: ngdialog-pulse 1.1s infinite;
+  outline: none;
+}
+
+@media (max-width: 568px) {
+  /* line 59, ../sass/ng_dialog_custom.scss */
+  .ngdialog.ngdialog-theme-lv .ngdialog-button:focus {
+    animation: none;
+  }
+  /* line 62, ../sass/ng_dialog_custom.scss */
+  .ngdialog.ngdialog-theme-lv .ngdialog-button.ngdialog-button-primary {
+    background: #3288e6;
+    color: #fff;
+  }
+
+  /* line 67, ../sass/ng_dialog_custom.scss */
+  .ngdialog-button.ngdialog-button-secondary {
+    background: #e0e0e0;
+    color: #777;
+  }
+}
