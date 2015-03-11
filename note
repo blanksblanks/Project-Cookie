@@ -1,3 +1,6 @@
+ask re identityservice.js -->         endpoint = '/api/users/me';
+
+
 server/routes.js
     app.use('/github',require('../github/index')); // this line 
 github/

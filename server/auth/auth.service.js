@@ -34,6 +34,7 @@
 
     req.user = payload.sub;
     req.role = payload.role;
+    console.log('next', next);
     next();
   }
 
@@ -49,7 +50,7 @@
   }
 
   function login(req, res) {
-    console.log('\n\nLOGGING IN USER\n\n');
+    // console.log('\n\nLOGGING IN USER\n\n');
     User.findOne({ email: req.body.email }, function(err, user) {
       if (err) {
         console.log('error finding user');

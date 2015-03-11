@@ -26,6 +26,7 @@
       } else {
         $http.get(endpoint)
           .success(function(data) {
+            console.log('data', data);
             currentUser = new User();
             angular.extend(currentUser, data);
             $log.info('current user is now set');
