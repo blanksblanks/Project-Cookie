@@ -7,6 +7,12 @@
   var theChart;
   function StackedAreaCtrl($scope, $log,$auth, GithubService,IdentityService) {
     $scope.activity=$scope.contributors=$scope.repos=[];
+    $scope.drawChart = function() {
+              d3.select("#stackedAreaChart svg")
+              .datum(theData())
+              .transition().duration(350)
+              .call(theChart);
+    }
     nv.addGraph(function() {
       var chart = nv.models.stackedAreaChart()
                   .margin({right: 100})
@@ -32,11 +38,16 @@
     });//end addgraph
     function theData() {
       //foreach day, get the date, total number of commits, and approximate number of commits per user
-      var activity=$scope.activity[$scope.repos.indexOf($scope.selectedRepo)].value,
+      var activity=$scope.activity.filter(function(val) {
+                     return val.repo===$scope.selectedRepo;
+                   })[0].value,
+          contribs=$scope.contributors.filter(function(val) {
+                     return val.repo===$scope.selectedRepo;
+                   })[0].value,
           weeks=activity.length;
 
       var data=[];
-      $scope.contributors[$scope.repos.indexOf($scope.selectedRepo)].value.map(function(usr,usridx,arrusr) {
+      contribs.map(function(usr,usridx,arrusr) {
         var days=[];
         //        days[0]=days[weeks*7]={};
         var usrdata={'key': usr.author.login};
