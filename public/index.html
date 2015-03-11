@@ -42,12 +42,16 @@
   <![endif]-->
 
   <section class="content">
+    <!-- <div class="page-wrap"> -->
       <div id="content" class="animate-fade-up">
         <ui-view class="page-transition view-transition"></ui-view>
       </div>
+    <!-- </div> -->
   </section>
+
   <!-- <cu-footer></cu-footer> -->
-  <footer class="container-fluid text-center">
+  <!-- <footer class="container-fluid text-center"> -->
+    <footer class="site-footer">
     &copy 2015 Oz Ben-Ami, Bingyan Hu, Cheng Huang, Jessica Forde, and Nina Baculinao
   </footer>
 
@@ -125,11 +129,13 @@
   <script src="app/core/user/User.js"></script>
   <script src="app/dashboard/DashboardCtrl.js"></script>
   <script src="app/dashboard/config.route.js"></script>
-  <script src="app/github/GitCtrl.js"></script>  
   <script src="app/github/DonutCtrl.js"></script>
+  <script src="app/github/GitCtrl.js"></script>
   <script src="app/github/GithubService.js"></script>
   <script src="app/github/config.route.js"></script>
   <script src="app/github/gitInfo.js"></script>
+  <script src="app/nv.d3.js"></script>
+  <script src="app/nv.d3.min.js"></script>
   <!-- endinjector -->
   <!-- endbuild -->
 </body>
