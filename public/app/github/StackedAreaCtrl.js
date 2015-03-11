@@ -7,7 +7,9 @@
   var theChart;
   function StackedAreaCtrl($scope, $log,$auth, GithubService,IdentityService) {
     $scope.activity=$scope.contributors=$scope.repos=[];
+    $scope.draw=0;
     $scope.drawChart = function() {
+      if($scope.draw===0) {return 'calculating...'+$scope.selectedRepo;};
               d3.select("#stackedAreaChart svg")
               .datum(theData())
               .transition().duration(350)
@@ -90,10 +92,8 @@
               $scope.contributors=contributors;
             };
             if(--i===0 && j===0) {
-              d3.select("#stackedAreaChart svg")
-              .datum(theData())
-              .transition().duration(350)
-              .call(theChart);
+              $scope.draw=1;
+              $scope.drawChart();
             }
           });//end getContributors
           GithubService.getActivities(repo.owner.login,repo.name).then(function(r) {
@@ -102,11 +102,8 @@
               $scope.activity=activity;
             };
             if(--j===0 && i===0) {
-
-              d3.select("#stackedAreaChart svg")
-              .datum(theData())
-              .transition().duration(350)
-              .call(theChart);
+              $scope.draw=1;
+              $scope.drawChart();
             }
           });//end getActivity
 
