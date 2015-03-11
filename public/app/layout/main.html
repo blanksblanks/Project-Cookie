@@ -34,7 +34,7 @@
 	  	<md-tab label="Donut Chart!"><center><br>
 		    <div ng-controller="DonutCtrl">
 		      <div class="span9">
-			<div id='chart2' class='span4'>
+			<div id='DonutChart' class='span4'>
 			  Donut chart
 			  <svg style='height:500px;width:400px'> </svg>
 			</div>
@@ -51,6 +51,20 @@
 	    </center></md-tab>
 
 	  	<md-tab label="Stacked Area Chart"><center><br>
+		    <div ng-controller="StackedAreaCtrl">
+<select ng-model="selectedRepo" ng-options="repo for repo in repos">
+  </select> 
+
+		      <div class="span9">
+			<div id='stackedAreaChart' class='span4'>
+			  StackedArea chart
+			  <svg style='height:500px;width:400px'> </svg>
+			</div>
+
+
+		      </div>
+
+
 	  	<!-- <img src="http://cl.ly/image/1C3p2l0i2U3w/Image%202015-03-11%20at%202.45.17%20AM.png"> -->
 	  	<img src="http://cl.ly/image/0b3L382M092q/Image%202015-03-11%20at%202.03.05%20AM.png">
 	    </center></md-tab>

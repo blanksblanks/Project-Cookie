@@ -19,13 +19,21 @@
       isAdmin: isAdmin*/
       getRepos: getRepos,
       getData: getData,
-      getCommits: getCommits
+      getCommits: getCommits,
+      getContributors: getContributors,
+      getActivities: getActivities
     };
     function getRepos() {
       return getData(reposEndpoint);
     }
     function getCommits(owner,repo) {
       return getData('/github/repos/'+owner+'/'+repo+'/stats/contributors');
+    }
+    function getContributors(owner,repo) {
+      return getData('/github/repos/'+owner+'/'+repo+'/stats/contributors');
+    }
+    function getActivities(owner,repo) {
+      return getData('/github/repos/'+owner+'/'+repo+'/stats/commit_activity');
     }
     function getData(endpoint) {
       var deferred = $q.defer();
