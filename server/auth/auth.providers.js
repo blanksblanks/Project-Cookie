@@ -118,7 +118,7 @@
       client_secret: authKeys.GITHUB_SECRET,
       code: req.body.code
     };
-    console.log('in github');
+
     // Step 1. Exchange authorization code for access token.
     request.post(accessTokenUrl, { json: true, form: params }, function(err, response, token) {
 

@@ -34,7 +34,6 @@
 
     req.user = payload.sub;
     req.role = payload.role;
-    console.log('next', next);
     next();
   }
 
