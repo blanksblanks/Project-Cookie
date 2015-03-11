@@ -26,8 +26,10 @@
           emailVerified: user.emailVerified,
           firstName: user.firstName,
           lastName: user.lastName,
-          role: user.role
+          role: user.role,
+          profileImageUrl: user.github.avatar_url
         };
+        console.log({'user':user,'toSend':userToSend});
         if (user.provider === 'google') {
           userToSend.provider = user.provider;
           userToSend.google = user.google;

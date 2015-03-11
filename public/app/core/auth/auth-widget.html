@@ -18,12 +18,11 @@
         class="dropdown">
       <div class="media" class="dropdown-toggle" dropdown-toggle>
         <a class="pull-right" href="#" >
-          <!-- src="{{ currentUser().github.picture }}" -->
-          <img class="media-object"
-               src="http://pandodaily.files.wordpress.com/2013/07/screen-shot-2013-07-08-at-5-06-05-pm.png"
-               alt="{{ currentUser().profile.displayName }}"
+          <img 
+               ng-src="{{currentUser().profileImageUrl}}"
+               alt="{{currentUser().displayName}}"
                width="50"
-               height="50">
+               height="50"/>
         </a>
         <div class="media-body">
           <a href="href"><span class="media-heading">{{currentUser().firstName}} {{currentUser().lastName}}<b class="caret"></b></span></a>
