@@ -21,6 +21,7 @@
         if (err||(user===undefined)) { return res.render('500'); }
         var userToSend = {
           _id: user._id,
+          gitname: user.github.login,
           displayName: user.displayName,
           email: user.email,
           emailVerified: user.emailVerified,
