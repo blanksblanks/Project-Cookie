@@ -24,12 +24,20 @@
       //Foreach repo, filter commits to our user only and get number of commits
       var commitStats=
         $scope.commits.map(function(obj) {
-          var val=
-            obj.value//array of users who committed to the repo, with stats for each
-            .filter(function(u) {
-              return u.author.login=IdentityService.currentUser().gitname;
-            })[0]
-            .total;
+          var val;
+          if (obj.value === undefined || obj.value[0] === undefined) {
+            val=0;
+          } else {
+            val=obj.value//array of users who committed to the repo, with stats for each
+              .filter(function(u) {
+                return u.author.login=IdentityService.currentUser().gitname;
+              });
+            if (val[0] === undefined) {
+              val=0;
+            } else {
+              val=val[0].total;
+            }
+          }
           return {'label':obj.repo,'value':val};
         });
       if(commitStats.length===0) {return [{'label':0,'value':0}];};
