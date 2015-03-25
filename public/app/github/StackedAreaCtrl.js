@@ -42,13 +42,22 @@
       //foreach day, get the date, total number of commits, and approximate number of commits per user
       var activity=$scope.activity.filter(function(val) {
                      return val.repo===$scope.selectedRepo;
-                   })[0].value,
+                   }),
           contribs=$scope.contributors.filter(function(val) {
                      return val.repo===$scope.selectedRepo;
-                   })[0].value,
-          weeks=activity.length;
-
-      var data=[];
+                   }),
+          weeks=activity.length,
+          data=[];
+      if (activity[0] === undefined || activity[0].value.length === undefined) {
+        activity=[];
+      } else {
+        activity=activity[0].value;
+      }
+      if (contribs[0] === undefined || contribs[0].value.length === undefined) {
+        contribs=[];
+      } else {
+        contribs=contribs[0].value;
+      }
       contribs.map(function(usr,usridx,arrusr) {
         var days=[];
         //        days[0]=days[weeks*7]={};
