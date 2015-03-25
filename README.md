@@ -2,26 +2,12 @@
 
 ### About GitVis
 
-**Problem:** GitHub has become the social network for all developers. It changes the way how we collaborate and share things. As a user who wants to better understand his/her git activities, however, there are very few good existing tools to use. GitHub does offer graph service, but it only tracks activities of a particular repository and only static data with limited options.
-**Solution:** We are going to build an interactive data visualization of activities of a GitHub user/repo.
-**Tools/Libraries:** d3.js([http://d3js.org/](http://d3js.org/)), GitHub API, Angular, Mongoose, Express, Node
-
-### Demo
-
-Main page when you visit http://project-cookie.herokuapp.com/
-![main](http://cl.ly/image/0c3z2O0W2z2x/Image%202015-03-24%20at%206.39.46%20PM.png)
-
-Log in using GitHub authentication
-![login](http://cl.ly/image/1T3f3c3p0z3L/Image%202015-03-24%20at%206.40.21%20PM.png)
-
-Stacked chart example of an individual repo
-![stacked](http://cl.ly/image/211o2E1Z3W0G/Image%202015-03-24%20at%206.42.27%20PM.png)
-
-Donut chart (may not load if you have too many repos)
-![donut](http://cl.ly/image/052e0q3A2B00/Image%202015-03-24%20at%206.43.29%20PM.png)
-
-Click gitinfo to see the raw data in unprocessed text form
-![gitinfo](http://cl.ly/image/0c0M1G0m060U/Image%202015-03-24%20at%206.41.21%20PM.png)
+####Problem
+GitHub has become a major social network for many developers. It changes the way we collaborate and share things. As users who want to better understand our git activities, however, we found existing tools lacking. While GitHub does offer graph services, it only tracks the number of commits per day and activities of a particular repository with limited options for an individual's activity.
+####Solution
+We are going to build an interactive data visualization of activities of a GitHub user in addition to his/her repositories.
+####Tools & Libraries
+[GitHub API](https://developer.github.com/v3/), [D3](http://d3js.org/), Angular, Mongoose, Express, Node
 
 ### TEAM NAME: Project Cookie:cookie:
 
@@ -30,10 +16,10 @@ Click gitinfo to see the raw data in unprocessed text form
 | UNI      | Github username  | Full Name      | School      | Year |
 |---------:|------------------|----------------|-------------|------|
 |  nb2406  | blanksblanks     | Nina Baculinao | CE (prev CC)| 2015 |
-|  bh2447  | bingyanzen       | Bingyan Hu     | BC          | 2016 |
-|  ch2994  | ch2994           | Cheng Huang    | SEAS        | 2016 |
 |  yob2000 | ozzieba          | Oz Ben-Ami     | SEAS        | 2015 |
 |  jzf2101 | jzf2101          | Jessica Forde  | CE            |   2015   |
+|  bh2447  | bingyanzen       | Bingyan Hu     | BC          | 2016 |
+|  ch2994  | ch2994           | Cheng Huang    | SEAS        | 2016 |
 
 ###Local Installation
 
@@ -44,7 +30,8 @@ cd col-ang-gen/
 npm install
 bower install
 grunt build
-node server.js ```
+node server.js
+```
 
 ## MVP Milestones
 
@@ -65,3 +52,32 @@ Week 4 (3/8 - 3/11/2015) - _finishing the polish_
 - [x] Make visualizations go live on Heroku
 - [X] FINAL PROJECT DUE SUN 3/8 @ 11:59PM
 - [ ] LAST CLASS (DEMOS) ON WED 3/11 @ 2:10PM
+
+### Quick Demo
+
+Note: Currently there are some placeholder images where the development of graph visualization is still in progress, but all the graphs should be implemented by May 2015. Check back soon!
+
+Main page when you visit [http://project-cookie.herokuapp.com/](http://project-cookie.herokuapp.com/)
+![main](http://cl.ly/image/0c3z2O0W2z2x/Image%202015-03-24%20at%206.39.46%20PM.png)
+
+Log in using GitHub authentication
+![login](http://cl.ly/image/1T3f3c3p0z3L/Image%202015-03-24%20at%206.40.21%20PM.png)
+
+Stacked chart example of an individual repo
+![stacked](http://cl.ly/image/211o2E1Z3W0G/Image%202015-03-24%20at%206.42.27%20PM.png)
+
+Donut chart (may not load if you have too many repos)
+![donut](http://cl.ly/image/052e0q3A2B00/Image%202015-03-24%20at%206.43.29%20PM.png)
+
+Click gitinfo to see the raw data in unprocessed text form
+![gitinfo](http://cl.ly/image/0c0M1G0m060U/Image%202015-03-24%20at%206.41.21%20PM.png)
+
+### More Information
+This is an open source project we developed as the final project for our Advanced JavaScript class at Columbia University. Check out our Wiki Pages for more information about our planning and research process:
+* [Home](https://github.com/blanksblanks/project-cookie/wiki)
+* [Architecture](https://github.com/blanksblanks/project-cookie/wiki/Architecture)
+* [GitHub API](https://github.com/blanksblanks/project-cookie/wiki/GitHub-API)
+* [Interactive Data Visualization in JS](https://github.com/blanksblanks/project-cookie/wiki/Interactive-Data-Visualization-in-JS)
+* [Mockup](https://github.com/blanksblanks/project-cookie/wiki/Mockup)
+* [Mockup](https://github.com/blanksblanks/project-cookie/wiki/Mockup)
+* [Meeting Notes](https://github.com/blanksblanks/project-cookie/wiki/Notes-from-Meeting-with-Lev-(2-18-15))
