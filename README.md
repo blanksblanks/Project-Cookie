@@ -62,7 +62,6 @@ Stacked chart example of an individual repo
 
 Donut chart of all repos (may not load if you have too many repos)
 ![donut](http://cl.ly/image/052e0q3A2B00/Image%202015-03-24%20at%206.43.29%20PM.png)
->>>>>>> upstream/master
 
 Click gitinfo to see the raw data in unprocessed text form
 ![gitinfo](http://cl.ly/image/0c0M1G0m060U/Image%202015-03-24%20at%206.41.21%20PM.png)
