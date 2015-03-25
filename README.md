@@ -24,7 +24,6 @@ We are going to build an interactive data visualization of activities of a GitHu
 Make sure you have the necessary .env and .envdist files!
 
 ```shell
-cd col-ang-gen/
 npm install
 bower install
 grunt build
