@@ -1,6 +1,6 @@
 # GitVis :octocat:
 
-### About GitVis
+##About GitVis
 
 ####Problem
 GitHub has become a major social network for many developers. It changes the way we collaborate and share things. As users who want to better understand our git activities, however, we found existing tools lacking. While GitHub does offer graph services, it only tracks the number of commits per day and activities of a particular repository with limited options for an individual's activity.
@@ -9,11 +9,9 @@ We are going to build an interactive data visualization of activities of a GitHu
 ####Tools & Libraries
 [GitHub API](https://developer.github.com/v3/), [D3](http://d3js.org/), Angular, Mongoose, Express, Node
 
-### TEAM NAME: Project Cookie:cookie:
+##Team Name: Project Cookie:cookie:
 
-### TEAM MEMBERS:
-
-| UNI      | Github username  | Full Name      | School      | Year |
+| UNI      | Github Username  | Full Name      | School      | Year |
 |---------:|------------------|----------------|-------------|------|
 |  nb2406  | blanksblanks     | Nina Baculinao | CE (prev CC)| 2015 |
 |  yob2000 | ozzieba          | Oz Ben-Ami     | SEAS        | 2015 |
@@ -21,7 +19,7 @@ We are going to build an interactive data visualization of activities of a GitHu
 |  bh2447  | bingyanzen       | Bingyan Hu     | BC          | 2016 |
 |  ch2994  | ch2994           | Cheng Huang    | SEAS        | 2016 |
 
-###Local Installation
+##Local Installation
 
 Make sure you have the necessary .env and .envdist files!
 
@@ -33,7 +31,7 @@ grunt build
 node server.js
 ```
 
-## MVP Milestones
+##MVP Milestones
 
 Week 1 (2/15 - 2/21/2015)
 - [x] Research D3 and Github API and create a Wiki page for such information
@@ -53,12 +51,9 @@ Week 4 (3/8 - 3/11/2015) - _finishing the polish_
 - [X] FINAL PROJECT DUE SUN 3/8 @ 11:59PM
 - [ ] LAST CLASS (DEMOS) ON WED 3/11 @ 2:10PM
 
-### Quick Demo
+##Quick Demo
 
 Note: Currently there are some placeholder images where the development of graph visualization is still in progress, but all the graphs should be implemented by May 2015. Check back soon!
-
-Main page when you visit [http://project-cookie.herokuapp.com/](http://project-cookie.herokuapp.com/)
-![main](http://cl.ly/image/0c3z2O0W2z2x/Image%202015-03-24%20at%206.39.46%20PM.png)
 
 Log in using GitHub authentication
 ![login](http://cl.ly/image/1T3f3c3p0z3L/Image%202015-03-24%20at%206.40.21%20PM.png)
@@ -66,13 +61,13 @@ Log in using GitHub authentication
 Stacked chart example of an individual repo
 ![stacked](http://cl.ly/image/211o2E1Z3W0G/Image%202015-03-24%20at%206.42.27%20PM.png)
 
-Donut chart (may not load if you have too many repos)
+Donut chart of all repos (may not load if you have too many repos)
 ![donut](http://cl.ly/image/052e0q3A2B00/Image%202015-03-24%20at%206.43.29%20PM.png)
 
 Click gitinfo to see the raw data in unprocessed text form
 ![gitinfo](http://cl.ly/image/0c0M1G0m060U/Image%202015-03-24%20at%206.41.21%20PM.png)
 
-### More Information
+##More Information
 This is an open source project we developed as the final project for our Advanced JavaScript class at Columbia University. Check out our Wiki Pages for more information about our planning and research process:
 * [Home](https://github.com/blanksblanks/project-cookie/wiki)
 * [Architecture](https://github.com/blanksblanks/project-cookie/wiki/Architecture)
