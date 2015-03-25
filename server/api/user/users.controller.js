@@ -21,13 +21,16 @@
         if (err||(user===undefined)) { return res.render('500'); }
         var userToSend = {
           _id: user._id,
+          gitname: user.github.login,
           displayName: user.displayName,
           email: user.email,
           emailVerified: user.emailVerified,
           firstName: user.firstName,
           lastName: user.lastName,
-          role: user.role
+          role: user.role,
+          profileImageUrl: user.github.avatar_url
         };
+        console.log({'user':user,'toSend':userToSend});
         if (user.provider === 'google') {
           userToSend.provider = user.provider;
           userToSend.google = user.google;

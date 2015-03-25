@@ -19,6 +19,7 @@
       margin: 20em 20em 20em;
     }
   </style>
+  <link rel=:"stylesheet" href="app/nv.d3.min.css" />
   <!-- build:css style.css -->
   <link rel="stylesheet" href="/stylesheets/css/style.css" />
   <!-- endbuild -->
@@ -41,13 +42,17 @@
   <![endif]-->
 
   <section class="content">
+    <!-- <div class="page-wrap"> -->
       <div id="content" class="animate-fade-up">
         <ui-view class="page-transition view-transition"></ui-view>
       </div>
+    <!-- </div> -->
   </section>
+
   <!-- <cu-footer></cu-footer> -->
-  <footer class="container-fluid text-center">
-    &copy: 2014 This is the footer
+  <!-- <footer class="container-fluid text-center"> -->
+    <footer class="site-footer">
+    &copy 2015 Nina Baculinao, Oz Ben-Ami, Jessica Forde, Bingyan Hu, and Cheng Huang
   </footer>
 
 
@@ -66,8 +71,7 @@
   <script src="/bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
   <!-- ds.js -->
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script src="nv.d3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
   <!-- build:js app/app.min.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -124,10 +128,14 @@
   <script src="app/core/user/User.js"></script>
   <script src="app/dashboard/DashboardCtrl.js"></script>
   <script src="app/dashboard/config.route.js"></script>
+  <script src="app/github/DonutCtrl.js"></script>
   <script src="app/github/GitCtrl.js"></script>
   <script src="app/github/GithubService.js"></script>
+  <script src="app/github/StackedAreaCtrl.js"></script>
   <script src="app/github/config.route.js"></script>
   <script src="app/github/gitInfo.js"></script>
+  <script src="app/nv.d3.js"></script>
+  <script src="app/nv.d3.min.js"></script>
   <!-- endinjector -->
   <!-- endbuild -->
 </body>

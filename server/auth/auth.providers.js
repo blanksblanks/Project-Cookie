@@ -131,12 +131,13 @@
         console.log(profile);
         if(!profile) {return res.status(401).send('bad credentials');}
         // Step 3a. If user is already signed in then link accounts.
+        console.log('user none');
         if (req.headers.authorization) {
           User.findOne({ 'github.id': profile.id }, function(err, existingUser) {
             if (existingUser) {
               return res.status(409).send({ message: 'There is already a GitHub account that belongs to you' });
             }
-
+            console.log('userrrr in if');
             var token = req.headers.authorization.split(' ')[1];
             var payload = jwt.decode(token, TOKEN_SECRET);
 
@@ -190,6 +191,7 @@
                 }
                 user.email = profile.email;
                 user.provider = 'github';
+                console.log('userrrr');
                 // if (profile.picture) {
                 //   user.profileImageUrl = profile.picture;
                 // }

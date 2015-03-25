@@ -18,11 +18,11 @@
         class="dropdown">
       <div class="media" class="dropdown-toggle" dropdown-toggle>
         <a class="pull-right" href="#" >
-          <img class="media-object"
-               src="{{ currentUser().github.picture }}"
-               alt="{{ currentUser().profile.displayName }}"
-               width="30"
-               height="30">
+          <img 
+               ng-src="{{currentUser().profileImageUrl}}"
+               alt="{{currentUser().displayName}}"
+               width="50"
+               height="50"/>
         </a>
         <div class="media-body">
           <a href="href"><span class="media-heading">{{currentUser().firstName}} {{currentUser().lastName}}<b class="caret"></b></span></a>

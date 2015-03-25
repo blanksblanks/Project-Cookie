@@ -36,6 +36,7 @@ req,res,'https://api.github.com/user/repos');
       api_request(user.github.token,url,function(data) {
         var obj = {};
         obj[label]=data;
+        console.log('objtt', obj);
         res.send(obj);
       }  );
 //      var accessToken = user.github.token;

@@ -3,8 +3,8 @@
 
   var app = angular.module('app.github');
   app.controller('GitCtrl', GitCtrl);
-  GitCtrl.$inject = ['$scope','$log','GithubService'];
-  function GitCtrl($scope, $log, GithubService) {
+  GitCtrl.$inject = ['$scope','$log','$auth','GithubService'];
+  function GitCtrl($scope, $log, $auth,GithubService) {
     var deferred = GithubService.getRepos();
     deferred.then(function(val) {
       $scope.gitRepos=val;
