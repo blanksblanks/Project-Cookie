@@ -70,6 +70,20 @@
     </center></md-tab>
 
     <md-tab label="Cumulative Line Chart"><center><br>
+	<div ng-controller="ClineCtrl">
+	  <select ng-model="selectedRepo" ng-options="repo for repo in repos">
+	  </select> 
+	  {{drawChart()}}
+	  <div class="span9">
+	    <div id='cumulativeLineChart' class='span4'>
+	      Cumulative line chart
+	      <svg style='height:500px;width:1000px'> </svg>
+	    </div>
+
+
+	  </div>
+
+
 	<img src="http://cl.ly/image/442z2b0B311K/Image%202015-03-11%20at%202.03.54%20AM.png">
     </center></md-tab>
 
