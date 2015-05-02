@@ -125,5 +125,5 @@ GitVis is an open source project we developed as the final project for our JavaS
 - [GitHub API](https://github.com/blanksblanks/project-cookie/wiki/GitHub-API)
 - [Interactive Data Visualization in JS](https://github.com/blanksblanks/project-cookie/wiki/Interactive-Data-Visualization-in-JS)
 - [Mockup](https://github.com/blanksblanks/project-cookie/wiki/Mockup)
-- [Meeting Notes](https://github.com/blanksblanks/project-cookie/wiki/Notes-from-Meeting-with-Lev-(2-18-15)
+- [Meeting Notes](https://github.com/blanksblanks/project-cookie/wiki/Notes-from-Meeting-with-Lev-2-18-15)
 
