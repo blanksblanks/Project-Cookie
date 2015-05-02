@@ -54,26 +54,26 @@ GitVis is an interactive data visualization of the activities of a GitHub user a
 
 ---
 ##What we've accomplished
-- ###GitHub oAuth
-- ###Using promises to asynchronously query data from GitHub's API
-- ###Interactive graphs based on GitHub user data using D3:
+- GitHub oAuth
+- Using promises to asynchronously query data from GitHub's API
+- Interactive graphs based on GitHub user data using D3:
 	- Donut chart
 	- Stacked area chart
 	- Cumulative line chart
 
 ##What we found most difficult
-- ###Authentication
-- ###Migrating to Heroku from our old server
-- ###Using D3 within our Angular framework
+- Authentication
+- Migrating to Heroku from our old server
+- Using D3 within our Angular framework
 
 ##What we found most rewarding
-- ###Querying raw data from github
-- ###Making interactive visualizations! 
-- ###Experimenting with [Material Design](http://www.google.com/design/spec/material-design/introduction.html)
+- Querying raw data from github
+- Making interactive visualizations! 
+- Experimenting with [Material Design](http://www.google.com/design/spec/material-design/introduction.html)
 
 ##Problems
-- ###We were unable to complete all our desired charts
-- ###GitHub collaboration issues
+- We were unable to complete all our desired charts
+- GitHub collaboration issues
 	- GitHub doesn't list Cheng as a collaborator on the project despite his contribuitions to the repo
 
 ---
