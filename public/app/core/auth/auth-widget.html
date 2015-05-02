@@ -17,7 +17,7 @@
         dropdown
         class="dropdown">
       <div class="media" class="dropdown-toggle" dropdown-toggle>
-        <a class="pull-right" href="#" >
+        <a class="pull-right" href="." >
           <img 
                ng-src="{{currentUser().profileImageUrl}}"
                alt="{{currentUser().displayName}}"
@@ -39,7 +39,6 @@
       </ul>
 
       <ul ng-if="isAuthenticated()" class="dropdown-menu">
-        <li><a ui-sref="dashboard">Dashboard</a></li>
         <li>
           <a ui-sref="profile({id: currentUser()._id})">
             User Profile

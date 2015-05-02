@@ -18,17 +18,22 @@ GitVis is an interactive data visualization of the activities of a GitHub user a
 ###Login with GitHub authentication
 
 
-![login](http://cl.ly/image/1T3f3c3p0z3L/Image%202015-03-24%20at%206.40.21%20PM.png)
+![login](signin.png)
 
-###Stacked area chart for individual repos 
-
-![stacked](http://cl.ly/image/211o2E1Z3W0G/Image%202015-03-24%20at%206.42.27%20PM.png)
 
 ###Donut chart of multiple repos
 ![donut](donut.png)
 
+###Stacked area chart for individual repos 
+
+![stacked](stacked.png)
+
+###Cumulative line chart for individual repos
+![donut](cumulative.png)
+
+
 ###Gitinfo displays user data as a JSON
-![gitinfo](http://cl.ly/image/0c0M1G0m060U/Image%202015-03-24%20at%206.41.21%20PM.png)
+![gitinfo](gitinfo.png)
 
 ---
 
@@ -80,7 +85,6 @@ GitVis is an interactive data visualization of the activities of a GitHub user a
 
 ##Local Installation
 
-Make sure you have the necessary .env and .envdist files!
 
 ```shell
 npm install
@@ -88,6 +92,8 @@ bower install
 grunt build
 node server.js
 ```
+
+Be sure to have the necessary `.env` and `.envdist` files!
 
 ---
 
@@ -102,11 +108,11 @@ Week 2 (2/22 - 2/28/2015) - _finishing a basic build_
 - [x] FIRST MILESTONE DUE SUN 2/22 @ 11:59PM
 - [X] All day intensive workshop for team projects on Sat 2/28
 
-Week 3 (3/1 - 3/7/2015) - _finishing all core functionality_
+Week 3 (3/1 - 3/7/2015) - _finishing core functionality_
 - [x] Set up the mechanism to request data and information from Github
 - [X] SECOND MILESTONE DUE SUN 3/1 @ 11:59PM
 
-Week 4 (3/8 - 3/11/2015) - _finishing the polish_
+Week 4 (3/8 - 3/11/2015) - _finishing polish_
 - [x] Make visualizations go live on Heroku
 
 ---
@@ -119,5 +125,5 @@ GitVis is an open source project we developed as the final project for our JavaS
 - [GitHub API](https://github.com/blanksblanks/project-cookie/wiki/GitHub-API)
 - [Interactive Data Visualization in JS](https://github.com/blanksblanks/project-cookie/wiki/Interactive-Data-Visualization-in-JS)
 - [Mockup](https://github.com/blanksblanks/project-cookie/wiki/Mockup)
-- [Meeting Notes](https://github.com/blanksblanks/project-cookie/wiki/Notes-from-Meeting-with-Lev-(2-18-15))
+- [Meeting Notes](https://github.com/blanksblanks/project-cookie/wiki/Notes-from-Meeting-with-Lev-(2-18-15)
 

@@ -18,37 +18,18 @@
 
   <md-tabs class="md-accent">
 
-    <md-tab label="Scatterplot">
-      <!-- <img src="http://cl.ly/image/1I2Z081T2R1j/Image%202015-03-11%20at%202.47.12%20AM.png"> -->
-      <br><center><img src="http://cl.ly/image/2N0S401A313e/Image%202015-03-11%20at%202.00.38%20AM.png"></center>
-      <!-- 	  	<ul>
-	  		<li><b>Question: Which repos do you have the longest relationship with?
-	  		    <li>Information needed:</b>
-    	  		  <ul><li>Circle: repo
-   	  		    <li>Size: repo's number of commits
-   	  		    <li>x: date last updated
-  	  		    <li>y: how long this repo has existed
-      </ul></ul> -->
-    </md-tab>
-
-    <md-tab label="Donut Chart!"><center><br>
+    <md-tab label="Donut Chart"><center><br>
 	<div ng-controller="DonutCtrl">
 	  <div class="span9">
 	    <div id='DonutChart' class='span4'>
-	      Donut chart
 	      <svg style='height:500px;width:400px'> </svg>
 	    </div>
 
 
 	  </div>
 
-	  <!-- <img src="http://cl.ly/image/1W0y3J0r0m44/Image%202015-03-11%20at%202.42.36%20AM.png"> -->
-	  <img src="http://cl.ly/image/3r3h3l3J0d0h/Image%202015-03-11%20at%201.59.45%20AM.png">
     </center></md-tab>
 
-    <md-tab label="Add/Delete Chart"><center><br>
-	<img src="http://cl.ly/image/2U3I3b3F2l3V/Image%202015-03-11%20at%202.01.27%20AM.png">
-    </center></md-tab>
 
     <md-tab label="Stacked Area Chart"><center><br>
 	<div ng-controller="StackedAreaCtrl">
@@ -57,16 +38,12 @@
 	  {{drawChart()}}
 	  <div class="span9">
 	    <div id='stackedAreaChart' class='span4'>
-	      StackedArea chart
 	      <svg style='height:500px;width:1000px'> </svg>
 	    </div>
 
 
 	  </div>
 
-
-	  <!-- <img src="http://cl.ly/image/1C3p2l0i2U3w/Image%202015-03-11%20at%202.45.17%20AM.png"> -->
-	  <img src="http://cl.ly/image/0b3L382M092q/Image%202015-03-11%20at%202.03.05%20AM.png">
     </center></md-tab>
 
     <md-tab label="Cumulative Line Chart"><center><br>
@@ -76,40 +53,13 @@
 	  {{drawChart()}}
 	  <div class="span9">
 	    <div id='cumulativeLineChart' class='span4'>
-	      Cumulative line chart
 	      <svg style='height:500px;width:1000px'> </svg>
 	    </div>
 
 
 	  </div>
 
-
-	<img src="http://cl.ly/image/442z2b0B311K/Image%202015-03-11%20at%202.03.54%20AM.png">
     </center></md-tab>
-
-    <md-tab label="Angular Material Design Bar Chart">
-      <style>
-	.chart div {
-	font: 10px sans-serif;
-	background-color: steelblue;
-	text-align: right;
-	padding: 3px;
-	margin: 1px;
-	color: white;
-	}
-      </style>
-      <div class="chart"><br>
-	<div style="width: 40px;">4</div>
-	<div style="width: 80px;">8</div>
-	<div style="width: 150px;">15</div>
-	<div style="width: 160px;">16</div>
-	<div style="width: 230px;">23</div>
-	<div style="width: 420px;">42</div>
-      </div>
-    </md-tab>
-
-
-  </md-tabs>
 
 
   </div>
